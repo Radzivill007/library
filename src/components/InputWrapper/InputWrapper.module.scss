@@ -1,0 +1,16 @@
+@import '../../vars.scss';
+.label {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $light-gray;
+  margin-bottom: 4px;
+  margin-top: 32px;
+  @include xl {
+    margin-top: 26px;
+   }
+   @include lg {
+    margin-top: 20px;
+   }
+}

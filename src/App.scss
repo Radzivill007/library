@@ -1,0 +1,49 @@
+@import './vars.scss';
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .loader {
+    border: 8px solid $light-gray;
+    border-radius: 50%;
+    border-top-color: $white;
+    animation: spin 1s ease-in-out infinite;
+    width: 60px;
+    height: 60px;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: $dark-gray;
+}
+::-webkit-scrollbar-thumb {
+  background: $black;
+  border-radius: 4px;
+}

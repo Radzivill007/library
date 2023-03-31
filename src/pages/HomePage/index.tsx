@@ -1,26 +1,48 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React, { useEffect } from 'react'
 
-import CardsList from '../../components/CardsList'
+import CardsList from '../../components/Cardslist'
 import Filters from '../../components/Filters'
+import Pagination from '../../components/Pagination'
+import { useAppDispatch, useAppSelector } from '../../hooks/defineTyped'
 
-import { useSelector } from 'react-redux'
-import { PaginationState } from '../../redux/types'
+import { fetchBooks } from '../../features/api'
+
+import styles from './IndexPage.module.scss'
 
 function HomePage() {
-  const totalPages = useSelector((state: PaginationState) => state.totalPages)
+  const isCardsLoaded = useAppSelector((state) => state.cards.isCardsLoaded)
+
+  const subjectFilter = useAppSelector((state) => state.filters.subjectFilter)
+  const languageFilter = useAppSelector((state) => state.filters.languageFilter)
+  const titleFilter = useAppSelector((state) => state.filters.titleFilter)
+  const authorFilter = useAppSelector((state) => state.filters.authorFilter)
+
+  const currentPage = useAppSelector((state) => state.pagination.currentPage)
+  const itemsPerPage = useAppSelector((state) => state.pagination.itemsPerPage)
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    if (!isCardsLoaded) {
+      dispatch(
+        fetchBooks({
+          limit: itemsPerPage,
+          page: currentPage,
+          subjects: subjectFilter,
+          title: titleFilter,
+          author: authorFilter,
+          language: languageFilter,
+        })
+      )
+    }
+  }, [dispatch, isCardsLoaded, itemsPerPage, currentPage, subjectFilter, titleFilter, authorFilter, languageFilter])
 
   return (
-    <Container>
-      <h1>Библиотека</h1>
-      <p> {totalPages}</p>
-      <div className='d-flex justify-content-between' style={{ gap: '100px' }}>
-        <div className='card-list mt-5'>
-          <CardsList />
-        </div>
-        <Filters />
+    <div className={styles.home}>
+      <div>
+        <CardsList />
+        <Pagination />
       </div>
-    </Container>
+      <Filters />
+    </div>
   )
 }
 

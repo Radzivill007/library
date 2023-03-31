@@ -1,0 +1,51 @@
+@import '../../vars.scss';
+.card {
+  display: block;
+  background: $dark-gray;
+  padding: 32px;
+  color: $white;
+  text-decoration: none;
+  border-radius: 8px;
+  @include xl {
+    padding: 26px;
+  }
+  @include lg {
+    padding: 22px;
+  }
+  &:not(:last-child) {
+    margin-bottom: 16px;
+    @include sm {
+      margin-bottom: 8px;
+    }
+  }
+  & .title {
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 27px;
+    color: $white;
+    margin: 0 0 16px;
+
+  }
+  & .desc {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    color: $white;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+      @include lg {
+        margin-bottom: 12px;
+      }
+    }
+
+    & .gray {
+      color: $light-gray;
+    }
+
+    @include lg {
+      font-size: 14px;
+    }
+  }
+}

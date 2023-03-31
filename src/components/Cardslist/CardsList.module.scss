@@ -1,0 +1,44 @@
+@import '../../vars.scss';
+.cardsWrapper {
+  padding: 56px 72px;
+  @include xl {
+    padding: 45px 50px;
+  }
+  @include lg {
+    padding: 35px 40px;
+  }
+  @include sm {
+    padding: 32px 8px;
+  }
+  & h1 {
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 52px;
+    color: $white;
+    margin: 0 0 40px;
+    @include xl {
+      font-size: 36px;
+      margin-bottom: 34px;
+    }
+    @include lg {
+      font-size: 32px;
+      margin-bottom: 28px;
+    }
+    @include md {
+      margin-bottom: 72px;
+    }
+  }
+  & .noElements {
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    color: $white;
+    @include xl {
+      font-size: 26px;
+    }
+    @include lg {
+      font-size: 24px;
+    }
+  }
+}
