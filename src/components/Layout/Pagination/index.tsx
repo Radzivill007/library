@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactPaginate from 'react-paginate'
-import { setCardsLoaded, setCurrentPage } from '../../features/shared/sharedSlice'
+import { setCardsLoaded, setCurrentPage } from '../../../features/shared/sharedSlice'
 
-import { useAppSelector, useAppDispatch } from '../../hooks/defineTyped'
+import { useAppSelector, useAppDispatch } from '../../../hooks/defineTyped'
 
 import styles from './Pagination.module.scss'
 

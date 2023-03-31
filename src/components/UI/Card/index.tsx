@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { useAppSelector } from '../../hooks/defineTyped'
-import { languageToRussian } from '../../helpers/languageToRussian'
-import { CardProps } from '../../features/cards/types'
+import { useAppSelector } from '../../../hooks/defineTyped'
+import { languageToRussian } from '../../../helpers/languageToRussian'
+import { CardProps } from '../../../features/cards/types'
 import styles from './Card.module.scss'
 
 const Card: FC<CardProps> = ({ ...card }) => {

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 
-import CardsList from '../../components/Cardslist'
-import Filters from '../../components/Filters'
-import Pagination from '../../components/Pagination'
+import CardsList from '../../components/Layout/Cardslist'
+import Filters from '../../components/Layout/Filters'
+import Pagination from '../../components/Layout/Pagination'
 import { useAppDispatch, useAppSelector } from '../../hooks/defineTyped'
 
 import { fetchBooks } from '../../features/api'

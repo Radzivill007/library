@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import { useAppSelector } from '../../hooks/defineTyped'
-import Card from '../Card'
+import { useAppSelector } from '../../../hooks/defineTyped'
+import Card from '../../UI/Card'
 import styles from './CardsList.module.scss'
 
 const CardsList: FC = () => {

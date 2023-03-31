@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react'
-import { useAppSelector, useAppDispatch } from '../../hooks/defineTyped'
+import { useAppSelector, useAppDispatch } from '../../../hooks/defineTyped'
 import {
   setSubjectFilter,
   setLanguageFilter,
@@ -7,13 +7,13 @@ import {
   setAuthorFilter,
   setCardsLoaded,
   setCurrentPage,
-} from '../../features/shared/sharedSlice'
-import { languageToRussian } from '../../helpers/languageToRussian'
-import Dropdown from '../Dropdown'
-import Checkbox from '../Checkbox'
+} from '../../../features/shared/sharedSlice'
+import { languageToRussian } from '../../../helpers/languageToRussian'
+import Dropdown from '../../UI/Dropdown'
+import Checkbox from '../../Common/Checkbox'
 import styles from './Filters.module.scss'
-import TextInput from '../TextInput'
-import InputWrapper from '../InputWrapper'
+import TextInput from '../../Common/TextInput'
+import InputWrapper from '../../UI/InputWrapper'
 
 const Filters = () => {
   const [filterOpen, setFilterOpen] = useState(false)
